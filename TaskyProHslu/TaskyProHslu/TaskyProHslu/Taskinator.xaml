@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="TaskyProHslu.Taskinator"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Todo Items">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnAddItemClicked" Text="Add item" />
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="MyListView"
+              ItemSelected="OnItemSelected"
+              ItemsSource="{Binding TaskList}"
+              SelectedItem="{Binding SelectedTask}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Detail="{Binding Description}" Text="{Binding Name}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
